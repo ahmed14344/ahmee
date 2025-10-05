@@ -47,7 +47,7 @@ ROOT_URLCONF = 'ahmee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # تقدر تضيف هنا مسار قوالبك html
+        'DIRS': [BASE_DIR / 'templates'],  # تعريف مسار مجلد القوالب الرئيسي
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -55,6 +55,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',  # لدعم MEDIA
             ],
         },
     },
@@ -82,18 +83,25 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # إعدادات اللغة والتوقيت
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'ar'              # اللغة بالعربية
+TIME_ZONE = 'Asia/Riyadh'         # التوقيت الرياض
 USE_I18N = True
 USE_TZ = True
 
 
-# الملفات الثابتة (CSS, JS, صور)
-STATIC_URL = 'static/'
+# ============================
+# إعدادات الملفات الثابتة STATIC
+# ============================
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']   # مجلد static الرئيسي للمشروع
+STATIC_ROOT = BASE_DIR / 'staticfiles'     # مجلد لتجميع الملفات وقت الإنتاج (collectstatic)
 
-# الملفات المرفوعة (Media)
+# ============================
+# إعدادات الملفات المرفوعة MEDIA
+# ============================
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # الإعداد الافتراضي للمفتاح الأساسي
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -1,0 +1,63 @@
+{% load static %}
+{% include "header.html" %}
+
+<main>
+    <style>
+        .hero {
+            background: url("{% static 'images/swimm33.jpg' %}") no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 40px;
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .card {
+            background: #f1faff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #0077b6;
+        }
+    </style>
+
+    <section class="hero">
+        <h2>تعلم السباحة مع أفضل المدربين في المملكة</h2>
+    </section>
+
+    <section class="sections">
+        <div class="card">
+            <h3>الدروس الفردية</h3>
+            <p>تدريب شخصي يناسب مستواك مع مدرب متخصص.</p>
+        </div>
+        <div class="card">
+            <h3>دروس الأطفال</h3>
+            <p>تعليم السباحة للصغار بأسلوب ممتع وآمن.</p>
+        </div>
+        <div class="card">
+            <h3>المستويات المتقدمة</h3>
+            <p>برامج خاصة للمحترفين والراغبين في تطوير مهاراتهم.</p>
+        </div>
+    </section>
+</main>
+
+{% include "footer.html" %}

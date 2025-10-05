@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>سباحة المملكة</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Tajawal", sans-serif;
+        }
+        .navbar {
+            background-color: #0077b6; /* أزرق سباحة */
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: #90e0ef;
+        }
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .auth-buttons a {
+            background: #023e8a;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .auth-buttons a:hover {
+            background: #0096c7;
+        }
+        .welcome {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>🏊‍♂️ سباحة المملكة</h1>
+        <ul>
+            <li><a href="/home/">الرئيسية</a></li>
+            <li><a href="/about/">من نحن</a></li>
+            <li><a href="/courses/">الدورات</a></li>
+            <li><a href="/contact/">اتصل بنا</a></li>
+        </ul>
+        <div class="auth-buttons">
+            {% if user.is_authenticated %}
+                <span class="welcome">مرحبًا يا {{ user.username }}</span>
+                <a href="/accounts/logout/">تسجيل الخروج</a>
+            {% else %}
+                <a href="/accounts/register/">إنشاء حساب</a>
+                <a href="/accounts/login/">تسجيل الدخول</a>
+            {% endif %}
+        </div>
+    </div>

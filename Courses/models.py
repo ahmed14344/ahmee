@@ -5,6 +5,7 @@ class Course(models.Model):
     description = models.TextField("وصف الدورة")
     price = models.DecimalField("السعر", max_digits=8, decimal_places=2)
     duration_hours = models.PositiveIntegerField("المدة (ساعات)")
+    image = models.ImageField("صورة الدورة", upload_to="courses/", blank=True, null=True)  # ✅ جديد
     created_at = models.DateTimeField("تاريخ الإضافة", auto_now_add=True)
 
     class Meta:
