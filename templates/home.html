@@ -20,7 +20,7 @@
         }
         .sections {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             padding: 30px;
         }
@@ -35,25 +35,36 @@
         .card:hover {
             transform: translateY(-5px);
         }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
         .card h3 {
             color: #0077b6;
+            margin-bottom: 10px;
         }
     </style>
 
+    <!-- القسم الرئيسي -->
     <section class="hero">
         <h2>تعلم السباحة مع أفضل المدربين في المملكة</h2>
     </section>
 
+    <!-- بطاقات الدروس -->
     <section class="sections">
         <div class="card">
+            <img src="{% static 'images/indvedual.jpg' %}" alt="الدروس الفردية">
             <h3>الدروس الفردية</h3>
             <p>تدريب شخصي يناسب مستواك مع مدرب متخصص.</p>
         </div>
         <div class="card">
+            <img src="{% static 'images/swimm.jpg' %}" alt="دروس الأطفال">
             <h3>دروس الأطفال</h3>
             <p>تعليم السباحة للصغار بأسلوب ممتع وآمن.</p>
         </div>
         <div class="card">
+            <img src="{% static 'images/proff.jpg' %}" alt="المستويات المتقدمة">
             <h3>المستويات المتقدمة</h3>
             <p>برامج خاصة للمحترفين والراغبين في تطوير مهاراتهم.</p>
         </div>
