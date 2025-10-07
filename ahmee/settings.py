@@ -105,3 +105,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # الإعداد الافتراضي للمفتاح الأساسي
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ 
